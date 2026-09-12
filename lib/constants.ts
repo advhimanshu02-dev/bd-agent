@@ -1,0 +1,1 @@
+export const DEFAULT_FOLLOWUP_DAYS = 5
