@@ -7,6 +7,7 @@ import LeadScoreCard from './_components/lead-score-card'
 import MessageDraftEditor from './_components/message-draft-editor'
 import ResponseLog from './_components/response-log'
 import FollowUpEditor from './_components/followup-editor'
+import RunWorkflow from './_components/run-workflow'
 import { isSafeUrl } from '@/lib/url'
 
 const ACTIVITY_TYPES = ['NOTE_ADDED', 'STATUS_CHANGE', 'MESSAGE_DRAFTED', 'MARKED_SENT', 'CALL', 'EMAIL', 'MEETING', 'OTHER']
@@ -136,6 +137,8 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         </div>
       ) : (
         <>
+          <RunWorkflow leadId={lead.id} />
+
           <MessageDraftEditor
             leadId={lead.id}
             initialPersonalizationPoints={lead.personalization_points}
